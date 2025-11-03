@@ -4,7 +4,7 @@
     $nome_servidor = "localhost";
     $nome_usuario = "root";
     $senha_usuario = "";
-    $nome_bd = "sesi";
+    $nome_bd = "pizzaria";
     $porta  = "3306";
 
     // Cirando uma conexão com o banco de dados Mysql

@@ -9,7 +9,7 @@
         $senha = $_GET['senha'];
         
         try{
-            $conn->query("INSERT INTO usuario VALUES('','$nome','$email','$senha')");
+            $conn->query("INSERT INTO usuario VALUES('$nome','$email','$senha')");
             echo "<p class='text-success ms-5'>Cadastrado com sucesso</p>";
         }catch(Exception $e){
             echo "<p class='text-danger ms-5'>Erro ao cadastrar</p>".$e->getMessage();
@@ -27,7 +27,7 @@
 </head>
 <body>
     
-    <div class="container p-4 mt-5 col-4 bg-dark border border-primary rounded">
+    <div class="container p-4 mt-5 col-4 bs border border-primary rounded">
         <h1 class="text-primary">Cadastro</h1>
         <form>
             <input class="form-control" type="text" required name="nome" placeholder="Informe seu nome">

@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <div class="container p-4 mt-5 col-4 bg-dark border border-primary rounded">
+    <div class="container p-4 mt-5 col-4 bg border border-primary rounded">
         <h1 class="text-primary">Login</h1>
         <form action="autenticar.php">
             <input class="form-control" type="email" required name="email" placeholder="Email">

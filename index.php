@@ -24,10 +24,16 @@
           <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="?pagina=cadastrar">Cadastrar</a>
+                <a class="nav-link active" aria-current="page" href="?pagina=cadastrarProduto">Produto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="?pagina=listar">Listar</a>
+                <a class="nav-link active" href="?pagina=listarProduto">Listar Produto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="?pagina=cadastrarPedido">Pedido</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="?pagina=listarPedido">Listar Pedido</a>
               </li>
             </ul>
             <ul class="navbar-nav">
@@ -42,15 +48,24 @@
       <div class="container mt-5">
         <?php 
           switch(@$_REQUEST['pagina']){
-            case 'cadastrar':
-              include('Aluno/formCadastrar.php');
+            case 'cadastrarPedido':
+              include('pedido/formCadastrar.php');
               break;
-            case 'editar':
-              include('Aluno/formEditar.php');
+            case 'editarPedido':
+              include('pedido/formEditar.php');
               break;
-            case 'listar':
-              include('Aluno/listar.php');
+            case 'listarPedido':
+              include('pedido/listar.php');
               break;
+              case 'cadastrarProduto':
+                include('produto/formCadastrar.php');
+                break;
+                case 'editarProduto':
+                  include('produto/formEditar.php');
+                  break;
+                  case 'listarProduto':
+                    include('produto/listar.php');
+                    break;
             case 'sair':
               include('auth/sair.php');
               break;

@@ -5,7 +5,7 @@
     $nome_usuario = "root";
     $senha_usuario = "";
     $nome_bd = "pizzaria";
-    $porta  = "3306";
+    $porta  = "3307";
 
     // Cirando uma conexão com o banco de dados Mysql
     $conn = new mysqli($nome_servidor, $nome_usuario,$senha_usuario, $nome_bd, $porta);

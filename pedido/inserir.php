@@ -6,7 +6,8 @@ $quantidade = $_GET['quantidade'];
 $ponto = $_GET['ponto'];
 $bebida = $_GET['bebida'];
 
-$insert = "INSERT INTO produto VALUES('{$sabor}','{$quantidade}','{$ponto}','{$bebida}')";
+
+$insert = "INSERT INTO pedido VALUES('','{$sabor}','{$quantidade}','{$ponto}','{$bebida}')";
 $result = $conn->query($insert);
 
 if ($result === true) {

@@ -1,39 +1,68 @@
+<?php
+
+include('conexao.php');
+
+$select = "SELECT * FROM produto";
+
+$result = $conn->query($select);
+
+?>
+
+
 <div class="container">
     <form action="pedido/inserir.php" method="get">
         <fieldset>
             <h1>Pedido</h1>
 
             <legend>Sabor:</legend>
-            <select class="form-select form-select-sm" aria-label="Small select example">
-                <option value>
-                    <input class="form-control mb-3" type="text" placeholder="Sabor?" required name="sabor" id="">
+            <select class="form-select form-select-sm" aria-label="Small select example" name="sabor">
+                <option value='Calabresa'>
+                    Calabresa
+                </option>
+                <option value='Frango com Catupiry'>
+                    Frango com Catupiry
+                </option>
+                <option value='Marguerita'>
+                    Marguerita
+                </option>
+                <option value='Mussarela'>
+                    Mussarela
+                </option>
+                <option value='Charque com Queijo Qualho'>
+                    Charque com Queijo Qualho
                 </option>
             </select>
 
             <br><br>
 
             <legend>Quantidade:</legend>
-            <select class="form-select form-select-sm" aria-label="Small select example">
-                <option value>
-                    <input class="form-control mb-3" type="number" placeholder="Quantidade?" required name="quantidade" id="">
-                </option>
-            </select>
+            <input class="form-control mb-3" type="number" placeholder="Quantidade?" required name="quantidade" id="">
 
             <br><br>
 
             <legend>Ponto:</legend>
-            <select class="form-select form-select-sm" aria-label="Small select example">
-                <option value>
-                    <input class="form-control mb-3" type="text" placeholder="ponto: mal passada, ao ponto, bem passada?" required name="ponto" id="">
-            </select>
+            <input class="form-control mb-3" type="text" placeholder="ponto: mal passada, ao ponto, bem passada?" required name="ponto" id="">
+
 
             <br><br>
 
             <legend>Bebida:</legend>
-            <select class="form-select form-select-sm" aria-label="Small select example">
-                <option value>
-                    <input class="form-control mb-3" type="text" placeholder="Bebida?" required name="bebida" id="">
+            <select class="form-select form-select-sm" aria-label="Small select example" name="bebida">
+                <?php
+                if ($result->num_rows > 0) {
+                    while ($produto = $result->fetch_object()) {
+                        echo "<option> 
+                                $produto->nome                  
+                            </option>";
+                    }
+                } else {
+                    echo "
+                <option> 
+                    Nenhum dado enconoptionado
                 </option>
+            ";
+                }
+                ?>
             </select>
         </fieldset>
 
